@@ -1,0 +1,27 @@
+#wel_screen{
+    width:100vw;
+    min-width: 100vh;
+    border: 2px solid orange;
+}
+
+#main_area{
+width:100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+border:2px solid green;
+}
+#restaurant_div{
+    box-sizing: border-box;
+    padding:20px;
+    margin:10px;
+    border:2px solid yellow;
+    width:80%;
+}
+.inside_list{
+    display: flex;
+    border:2px solid black;
+    justify-content: space-between;
+    padding: 20px;
+}

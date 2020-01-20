@@ -1,0 +1,66 @@
+<div>
+
+    <div>
+        <%for(user of users){%>
+            <form method='post'   action="/dashboard/users/updateUser/<%=user.id%>">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name:</th>
+                   
+                    <th scope="col" ><input type='text' name='name' value='<%=user.name%>'></th>
+                     
+                </form>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Email:</td>
+                    <td><input type='text' name='email' value='<%=user.email%>'></td>
+                   
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Password:</td>
+                    <td><input type='text' name='password' value='<%=user.password%>'></td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Mobile:</td>
+                    <td><input type='text' name='mobile' value='<%=user.mobile%>'></td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>RollNo:</td>
+                    <td><input type='text'   name='rollno' value='<%=user.rollno%>'></td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Gender:</td>
+                    <td><input type='text'   name='gender' value='<%=user.gender%>'></td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Avatar:</td>
+                    <td><input type='text' name='avatar' value='<%=user.avatar%>'></td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+              <button class='btn btn-info'>Update User</button>
+            </form>
+
+
+
+
+        <%}%>
+    </div>
+
+</div>

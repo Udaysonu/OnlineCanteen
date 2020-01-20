@@ -1,0 +1,77 @@
+<link rel='stylesheet' type='text/css' href='/css/menu.css'>
+<div id='menu_screen'>
+        <div id='list_screen'>
+            <h3 style="color: crimson;">Snacks : </h3>
+            <ul>
+                 
+                <% for(item of restaurant.snacks){%>
+                  <div id='item_div'>
+                    <div >
+                      <div> <h6 style="color: rgb(3, 151, 11);display: inline-block;"><strong>Item Name : </strong></h6>    <%=item.name%>  </div>
+                      <div>  <h6 style="color:orange;display: inline-block"> <strong>Price : </strong></h6>   <%=item.price%> </div>
+                   </div>
+                   <div><a class="btn btn-primary add_btn" data='<%=item.id%>' value="<%=item.id%>" role="button">ADD ITEM + </a> </div>
+                  </div> 
+                <%}%>
+            </ul>
+            <h3 style="color: crimson;"> Maincourse : </h3>
+            <ul>
+                <% for(item of restaurant.maincourse){%>
+                  <div id='item_div'>
+                    <div >
+                      <div> <h6 style="color: rgb(3, 151, 11);display: inline-block;"><strong>Item Name : </strong></h6>    <%=item.name%>  </div>
+                      <div>  <h6 style="color:orange;display: inline-block"> <strong>Price : </strong></h6>   <%=item.price%> </div>
+                   </div>
+                   <div><a class="btn btn-primary add_btn" data='<%=item.id%>' value="<%=item.id%>" role="button">ADD ITEM + </a> </div>
+                  </div> 
+                <%}%>
+            </ul>
+           
+            <h3 style="color: crimson;"> Drinks : </h3>
+            <ul>
+                <% for(item of restaurant.drinks){%>
+                  <div id='item_div'>
+                    <div >
+                      <div> <h6 style="color: rgb(3, 151, 11);display: inline-block;"><strong>Item Name : </strong></h6>    <%=item.name%>  </div>
+                      <div>  <h6 style="color:orange;display: inline-block"> <strong>Price : </strong></h6>   <%=item.price%> </div>
+                   </div>
+                   <div><a class="btn btn-primary add_btn" data="<%=item.id%> " value="<%=item.id%>" role="button">ADD ITEM + </a> </div>
+                  </div> 
+                <%}%>
+            </ul>
+
+
+
+
+
+
+
+        </div>
+        <ul id='cart_list' >
+          <h4> Cart List</h4>
+
+        <div id='cart'>
+          
+        </div>
+    
+       <div>
+        <h4> Your Details : </h4>
+        Name: <input type='text' id='customer_name' name='mobile' value="<%=user.name%>"><br>
+        Mobile: <input type='text' id='customer_mobile'  name='mobile' value="<%=user.mobile%>">
+         
+       </div>  
+       <small style="color: red;">Please check Name and Mobile. Ordering with unknown mobile is Illegal. <br>If caught punishment is severe</small><br>
+        
+       
+       <a id='place_order_btn' value='<%=user.id%>' class="btn btn-danger" href="/users/successful_order_placed" role="button">Place Order</a>
+         
+      </ul>
+
+
+
+
+
+
+
+</div>
+<script src='/js/menu.js' ></script  >

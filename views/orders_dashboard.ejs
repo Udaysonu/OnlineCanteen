@@ -1,0 +1,30 @@
+<link rel='stylesheet' type='text/css' href='/css/orders_dashboard.css'>
+
+<div id='order_board'>
+    <div id='order_div'>   
+        <%for(let order of orders){%>
+
+           <% let cost=0%>
+            <div class="card text-white bg-info mb-4" style="max-width: 18rem;">
+                <div class="card-header"><button class='btn btn-danger'> <%=order.createdAt%></button> </div>
+               
+                <div class="card-body">
+                  
+                  <h5 class="card-title"  style="color:yellow;">  <i class="fas fa-user-tie"></i>   <%=order.name%> <i class="fas fa-phone"></i> <%=order.mobile%></h5>
+                  <%for(let item of order.list){%>
+                    <% cost=cost+ parseInt(item.price)%>
+                  <p class="card-text"> <span style="text-align: left;"> <%=item.name%></span>     <span style="text-align: right;color:rgb(217, 255, 0)">  <%=item.price%></span>      </p>
+                  <%}%>
+                  
+                 <button class='btn btn-warning'><strong> Total Amount : </strong>  <%=cost%> </button>
+            </div>
+            </div>
+
+
+             
+                     
+              
+           
+        <%}%>
+    </div>
+</div>

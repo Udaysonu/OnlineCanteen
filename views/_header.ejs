@@ -1,0 +1,20 @@
+<link rel='stylesheet' type='text/css' href='/css/_header.css'>
+<nav id='header_nav'>
+    <ul id='right_nav_header'>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/users/restaurants'>Order Now</a></li>
+        
+        <li><a href='/users/contact'>Contact Us</a></</li>
+
+    </ul> 
+    <ul id='left_nav_header'>
+ 
+        <%if(locals.user){%>
+            <li><a class="btn btn-success" href="/users/signin" role="button"><%=user.name%> Profile</a></li>
+            <li><a class="btn btn-info" href="/users/signout" role="button">Log Out</a></li>
+        <%}else{%>
+        <li><a class="btn btn-info" href="/users/signin" role="button">Sign In</a></li>
+        <li><a class="btn btn-warning" href="/users/signup" role="button">Sign Up</a></li>
+        <%}%>
+    </ul>
+</nav>

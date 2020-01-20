@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>NITJ Canteen</title>
+    <link rel='shortcut icon' type='image/x-icon' href='/images/fevicon.ico'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<%- style %>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+<script src=' https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js '></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <script src="https://kit.fontawesome.com/fdb222da35.js" crossorigin="anonymous"></script>
+
+</head>
+  
+<body>
+
+
+
+    <%-include("_header");-%>
+ 
+    <%-body%>
+
+
+<script>
+        <%if(flash.success && flash.success.length>0){%>
+
+            new Noty({
+
+                  text:"<%=flash.success%>",
+                  theme:'relax',
+                  layout:'topRight',
+                  type:'success',
+                  timeout:1500
+                
+            }).show();
+
+
+        <%}%>   
+        
+        <%if(flash.error && flash.error.length>0){%>
+ 
+new Noty({
+
+      text:"<%=flash.error%>",
+      theme:'relax',
+      layout:'topRight',
+      type:'error',
+      timeout:1500
+    
+}).show();
+
+
+<%}%>    
+
+<%if(flash.info && flash.info.length>0){%>
+
+new Noty({
+
+      text:"<%=flash.info%>",
+      theme:'relax',
+      type:'info',
+      layout:'topRight',
+      timeout:1500
+    
+}).show();
+
+
+<%}%>    
+
+</script>
+
+<%-script%>
+</body>
+
+</html>

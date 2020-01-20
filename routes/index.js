@@ -2,9 +2,12 @@ const express=require('express');
 const router=express.Router();
 
 
+router.use('/users',require('./user'));
+router.use('/dashboard',require('./dashboard'));
 router.get('/',function(req,res){
-    return res.send('welcome to canteen');
-})
+    req.cart_list = [];
+    return res.render('home');
+});
 
 
 module.exports=router

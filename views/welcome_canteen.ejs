@@ -1,0 +1,77 @@
+<link rel='stylesheet' type='text/css' href='/css/welcome_canteen.css'>
+<div id='wel_screen'>
+    <div id='main_area'>
+         
+
+       <%for(rest of restaurants){%>
+        <div id='restaurant_div'>
+           <h1 style='color:red'><%=rest.name%></h1> 
+            <h3>Maincourses</h3>
+            <ul type='none'>
+            <%for(main of rest.maincourse){%>
+            <div class='inside_list'>
+            <span><h6 style='color:rgb(0, 89, 255)'><strong>Item Name : </strong><%=main.name%></h6></span> <span>  <h6 style="color:grey"><strong> Price : </strong> <%=main.price%> </h6> </span>   <span><a href='/dashboard/restaurant/deleteitem/?id=<%=main.id%>&type=maincourse&rest=<%=rest.id%>'> delete</a></span>
+            </div>
+
+            <%}%>
+            </ul>
+            <form action='/dashboard/restaurant/createmain' method='post'>
+              
+                <input type='text' placeholder="Name" name='name'>
+                <input type='text' placeholder="Price" name='price'>
+                <input type="text" name='rest' value='<%= rest._id %>' hidden>
+                <input type='text' placeholder="description" name='description'>
+                <button type='submit'>ADD MAINCOURSE</button>
+            </form>
+            <h3>Snacks</h3>
+            <ul type='none'>
+            <%for(snack of rest.snacks){%>
+                
+           <div class='inside_list' >    <span><h6 style="color:rgb(0, 119, 255)"><strong>Item Name : </strong> <%=snack.name%> </h6></span> <span> <h6 style="color: grey;">  <strong > Price : </strong>    <%= snack.price %>    </h6>  </span>   <span><a href='/dashboard/restaurant/deleteitem/?id=<%=snack.id%>&type=snacks&rest=<%=rest.id%>'>delete</a></span>           </div>
+            <%}%>
+            </ul>
+            <form action='/dashboard/restaurant/createSnack' method='post'>
+                <input type="text" name='rest' value='<%= rest._id %>' hidden>
+                <input type='text' placeholder='Name' name='name'>
+                <input type='text' placeholder="Price" name='price'>
+                <input type='text' placeholder="description" name='description'>
+                <button type='submit'>ADD Snacks</button>
+            </form>
+            <h3>Drinks</h3>
+            <ul  >
+            <%for(drink of rest.drinks){%>
+            <div class='inside_list'> <span><%=drink.name%></span> <span> -----> <%=drink.price%> </span> <span> <a href='/dashboard/restaurant/deleteitem/?id=<%=drink.id%>&type=drinks&rest=<%=rest.id%>'> delete</a> </span> </div> 
+           <%}%>
+        </ul>
+            <form method='post' action='/dashboard/restaurant/createDrink' >
+                <input type="text" name='rest' value='<%= rest._id %>' hidden>
+                <input type='text' placeholder="Name" name='name'>
+                <input type='text' placeholder="Price" name='price'>
+                <input type='text' placeholder="description"  name='description'>
+                <button type='submit'>ADD DRINKS</button>
+            </form>
+
+        </div>
+        <%}%>
+
+
+
+    </div>
+    <div id='sidebar'>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

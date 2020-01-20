@@ -1,0 +1,33 @@
+<link rel='stylesheet' type='text/css' href='/css/all_restaurants.css'>
+<div id='body_screen'>
+    <div id='mainbar'>
+        <%for(rest of restaurants){%>
+        <div id='rest'>
+            <div id='rest_image'><img src='/images/bowl.jpg'></div id='rest_image'>
+            <div id='rest_details'>
+                <h3><%=rest.name%></h3>
+                <p>Opening times</p>
+                <p><a class="btn btn-danger btn-lg" href="/users/menu/<%=rest.id%>" role="button">Order Here !!</a>  </p>
+
+            </div>
+        </div>
+
+        <%}%>
+
+    </div>
+    <div id='sidebar'>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>
